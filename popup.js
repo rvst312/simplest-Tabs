@@ -12,14 +12,16 @@ let savedTabs = [];
 // Render the saved tabs from the local storage
 function renderSavedTabs() {
   const savedTabsJSON = localStorage.getItem('savedTabs');
+  if (savedTabsJSON !== null) {
     savedTabs = JSON.parse(savedTabsJSON); //SavedTabs is array stored pages
     savedTabs.sort((a, b) => a.index - b.index); // Sort tabs based on index
-      for (let tab of savedTabs) {
-        const listItem = createListItem(tab);
-        tabList.appendChild(listItem);
-      }
+    for (let tab of savedTabs) {
+      const listItem = createListItem(tab);
+      tabList.appendChild(listItem);
     }
-  
+  }
+}
+
 function saveCurrentTab() {
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     const tab = tabs[0];
