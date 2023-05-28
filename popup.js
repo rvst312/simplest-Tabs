@@ -6,7 +6,6 @@ const clearTabs = document.getElementById('clear-tabs');
 const newFolder = document.getElementById('newFolder');
 const viewFolders = document.getElementById('viewFolders');
 
-
 let savedTabs = [];
 
 // Render the saved tabs from the local storage
@@ -54,8 +53,9 @@ function saveAllTabs() {
   });
 }
 
+//Storage: savedTabs
 function CreateNewFolder() {
-  return null;
+  return null; 
 }
 
 function ViewFolders() {
@@ -63,12 +63,7 @@ function ViewFolders() {
 }
 
 function ClearTabs() {
-  console.log(savedTabs)
-  savedTabs.splice(0, savedTabs.length)
-  console.log(savedTabs)
-  renderSavedTabs()
-
-
+  return null;
 }
 
 
