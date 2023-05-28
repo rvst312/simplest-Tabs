@@ -1,2 +1,2 @@
-# sim
+# Simplest Tabs
 simplest-tabs
