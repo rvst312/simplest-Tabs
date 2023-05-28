@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simplest Tabs</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <!--<h1>My Extension</h1>--> 
+    <div class="search-container">
+      <input type="search" id="search-input" placeholder=" Search">
+      <span class="search-icon"></span>
+      <!--<span class="info-icon" >i</span>-->
+      <a id="newFolder"><img src="icons/create_new_folder_FILL0_wght400_GRAD0_opsz48.svg" alt="create new folder with current pages"></a>
+      <a id="viewFolders"><img src="/icons/list_FILL0_wght400_GRAD0_opsz48.svg" alt="view save folders"></a>
+    </div>
+    <div>
+      <ul id="tab-list"></ul>
+    </div>
+    <div class="button-container">
+      <div>
+        <button id="save-current">Save current tab</button>
+        <button id="save-all">Save all tabs</button>
+        <button id="clear-tabs">Clear</button>
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
