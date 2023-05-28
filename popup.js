@@ -6,20 +6,21 @@ const clearTabs = document.getElementById('clear-tabs');
 const newFolder = document.getElementById('newFolder');
 const viewFolders = document.getElementById('viewFolders');
 
-
 let savedTabs = [];
 
 // Render the saved tabs from the local storage
 function renderSavedTabs() {
   const savedTabsJSON = localStorage.getItem('savedTabs');
+  if (savedTabsJSON !== null) {
     savedTabs = JSON.parse(savedTabsJSON); //SavedTabs is array stored pages
     savedTabs.sort((a, b) => a.index - b.index); // Sort tabs based on index
-      for (let tab of savedTabs) {
-        const listItem = createListItem(tab);
-        tabList.appendChild(listItem);
-      }
+    for (let tab of savedTabs) {
+      const listItem = createListItem(tab);
+      tabList.appendChild(listItem);
     }
-  
+  }
+}
+
 function saveCurrentTab() {
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     const tab = tabs[0];
@@ -52,8 +53,9 @@ function saveAllTabs() {
   });
 }
 
+//Storage: savedTabs
 function CreateNewFolder() {
-  return null;
+  return null; 
 }
 
 function ViewFolders() {
@@ -61,12 +63,7 @@ function ViewFolders() {
 }
 
 function ClearTabs() {
-  console.log(savedTabs)
-  savedTabs.splice(0, savedTabs.length)
-  console.log(savedTabs)
-  renderSavedTabs()
-
-
+  return null;
 }
 
 
