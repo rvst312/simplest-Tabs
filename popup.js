@@ -53,9 +53,12 @@ function saveAllTabs() {
   });
 }
 
-//Storage: savedTabs
+//temporal storage: savedTabs
 function CreateNewFolder() {
-  return null; 
+  let folder = prompt('insert new tab group name: ')
+  localStorage.setItem(folder, JSON.stringify(savedTabs)) 
+  const fold = localStorage.getItem(folder);
+  console.log(fold)
 }
 
 function ViewFolders() {
